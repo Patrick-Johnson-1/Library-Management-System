@@ -4,5 +4,5 @@ class Book:
         self.__title = title
         self.__author = author
         self.__total_copies = total_copies
-
+        self.__copies_available = total_copies
 book = Book("978-1-234", "1984", "George Orwell", 3)
