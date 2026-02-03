@@ -22,6 +22,11 @@ class Book:
     @property
     def total_copies(self):
         return self.__total_copies
+    #Setters Set
+    def title(self,value):
+        self.__title = value
+    def author(self, value):
+        self.__author = value
 
 
 
