@@ -37,7 +37,7 @@ class Book:
         return self.isbn == other.isbn
 
     def borrow(self):
-        if self.__copies_available > 0:
+        if self.copies_available > 0:
             self.__copies_available -= 1
             return True
         else:
