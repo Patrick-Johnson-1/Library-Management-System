@@ -37,11 +37,25 @@ class Book:
         return self.isbn == other.isbn
 
     def borrow(self):
-        pass
+        if self.__copies_available > 0:
+            self.__copies_available -= 1
+            return True
+        else:
+            return False
     def return_book(self):
-        pass
+        if self.copies_available < self.total_copies:
+            self.__copies_available +=1
+            return True
+        else:
+            return False
+
     def is_available(self):
-        pass
+        if self.copies_available > 0:
+            self.__copies_available -=1
+            return True
+        else:
+            return False
+
     def to_dict(self):
         pass
     def from_dict(self, data):
