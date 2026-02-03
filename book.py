@@ -22,9 +22,10 @@ class Book:
     @property
     def total_copies(self):
         return self.__total_copies
-    #Setters Set
+    @title.setter
     def title(self,value):
         self.__title = value
+    @author.setter
     def author(self, value):
         self.__author = value
 
@@ -32,7 +33,7 @@ class Book:
     def __str__(self):
         return f"{self.title} by {self.author} ({self.copies_available}/{self.total_copies} available) "
     def __repr__(self):
-        return f"Book(isbn='{self.isbn})"
+        return f"Book(isbn='{self.isbn}', title='{self.title}')"
     def __eq__(self, other):
         return self.isbn == other.isbn
 
@@ -50,11 +51,7 @@ class Book:
             return False
 
     def is_available(self):
-        if self.copies_available > 0:
-            self.__copies_available -=1
-            return True
-        else:
-            return False
+        return self.copies_available > 0
 
     def to_dict(self):
         return {
@@ -72,7 +69,7 @@ class Book:
             data["author"],
             data["total_copies"]
         )
-        book._Book_copies_available = data["copies_available"]
+        book._Book__copies_available = data["copies_available"]
         return book
 
 book = Book("978-1-234", "1984", "George Orwell", 3)
