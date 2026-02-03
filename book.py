@@ -57,9 +57,22 @@ class Book:
             return False
 
     def to_dict(self):
-        pass
-    def from_dict(self, data):
-        pass
-
+        return {
+            "isbn": self.__isbn,
+            "title": self.__title,
+            "author": self.__author,
+            "copies_available": self.__copies_available,
+            "total_copies": self.__total_copies
+        }
+    @classmethod
+    def from_dict(cls, data):
+        book = cls(
+            data["isbn"],
+            data["title"],
+            data["author"],
+            data["total_copies"]
+        )
+        book._Book_copies_available = data["copies_available"]
+        return book
 
 book = Book("978-1-234", "1984", "George Orwell", 3)
