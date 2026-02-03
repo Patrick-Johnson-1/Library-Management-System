@@ -27,7 +27,13 @@ class Book:
         self.__title = value
     def author(self, value):
         self.__author = value
-
+    #Dunder Methods - Double Underscore
+    def __str__(self):
+        pass
+    def __repr__(self):
+        pass
+    def __eq__(self, other):
+        pass
 
 
 book = Book("978-1-234", "1984", "George Orwell", 3)
