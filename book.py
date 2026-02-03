@@ -29,11 +29,11 @@ class Book:
         self.__author = value
     #Dunder Methods - Double Underscore
     def __str__(self):
-        pass
+        return f"{self.title} by {self.author} ({self.copies_available}/{self.total_copies} available) "
     def __repr__(self):
-        pass
+        return f"Book(isbn='{self.isbn})"
     def __eq__(self, other):
-        pass
+        return self.isbn == other.isbn
 
 
 book = Book("978-1-234", "1984", "George Orwell", 3)
