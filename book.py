@@ -27,6 +27,7 @@ class Book:
         self.__title = value
     def author(self, value):
         self.__author = value
+
     #Dunder Methods - Double Underscore
     def __str__(self):
         return f"{self.title} by {self.author} ({self.copies_available}/{self.total_copies} available) "
@@ -34,6 +35,17 @@ class Book:
         return f"Book(isbn='{self.isbn})"
     def __eq__(self, other):
         return self.isbn == other.isbn
+
+    def borrow(self):
+        pass
+    def return_book(self):
+        pass
+    def is_available(self):
+        pass
+    def to_dict(self):
+        pass
+    def from_dict(self, data):
+        pass
 
 
 book = Book("978-1-234", "1984", "George Orwell", 3)
