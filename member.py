@@ -28,3 +28,6 @@ class Member:
             return True
         else:
             return False
+
+    def can_borrow(self):
+        return  self.books_borrowed_count < self.__borrow_limit
