@@ -31,3 +31,11 @@ class Member:
 
     def can_borrow(self):
         return  self.books_borrowed_count < self.__borrow_limit
+    def return_book(self,isbn):
+        if isbn in self.__borrowed_books:
+            self.__borrowed_books.remove(isbn)
+            return True
+        else:
+            return False
+    def has_book(self,isbn):
+        return isbn in self.__borrowed_books
