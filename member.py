@@ -46,3 +46,20 @@ class Member:
             return False
     def has_book(self,isbn):
         return isbn in self.__borrowed_books
+
+    def to_dict(self):
+        return {
+            "member_id": self.__member_id,
+            "name": self.__name,
+            "borrowed_books": self.__borrowed_books,  # underscore not space
+            "borrow_limit": self.__borrow_limit  # underscore not space
+        }
+    @classmethod
+    def from_dict(cls, data):
+        member = cls(
+            data["member_id"],
+            data["name"],
+            data["borrow_limit"]
+        )
+        member._Member__borrowed_books = data["borrowed_books"]
+        return member
