@@ -4,7 +4,14 @@ class Member:
         self.__name = name
         self.__borrowed_books = []
         self.__borrow_limit = borrow_limit
-
+    def __str__(self):
+        count = self.books_borrowed_count
+        limit = self.__borrow_limit
+        return f"{self.name} (ID: {self.member_id}) - {count}/{limit} books borrowed"
+    def __repr__(self):
+        return f"Member(id='{self.member_id}', name='{self.name}')"
+    def __eq__(self, other):
+        return self.member_id == other.member_id
     @property
     def member_id(self):
         return self.__member_id
