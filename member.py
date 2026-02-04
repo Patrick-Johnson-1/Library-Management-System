@@ -21,3 +21,10 @@ class Member:
     @property
     def books_borrowed_count(self):
         return len(self.__borrowed_books)
+
+    def borrow_book(self, isbn):
+        if self.books_borrowed_count < self.__borrow_limit:
+            self.__borrowed_books.append(isbn)
+            return True
+        else:
+            return False
